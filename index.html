@@ -1,21 +1,165 @@
 <!doctype html>
 <html lang="en">
-<head><meta charset="UTF-8"><meta name="referrer" content="strict-origin-when-cross-origin"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#faeee5"><title>Hi, Ninang ♡</title><meta name="description" content="A little birthday surprise for Ninang. Happy 20th!"><link rel="stylesheet" href="style.css?v=3"><script src="app.js?v=8" defer></script></head>
-<body>
-<div class="grain" aria-hidden="true"></div><div class="ambient a" aria-hidden="true">✳</div><div class="ambient b" aria-hidden="true">✧</div>
-<header><a href="#hello" class="wordmark">for you<span> ♡</span></a><button id="sound" class="sound" aria-pressed="false">♫ <span>Play music</span></button></header>
-<main>
-<section id="hello" class="scene intro active" aria-labelledby="hello-title">
-<div class="eyebrow">A LITTLE SOMETHING, JUST FOR YOU</div><div class="intro-art" aria-hidden="true"><span class="orbit o1">✦</span><span class="orbit o2">♡</span><span class="orbit o3">✧</span><span class="postmark">a birthday note<br>from ninong</span><div class="hello-stamp">20<span>looks good on you</span></div></div>
-<h1 id="hello-title">Hi, <em>Ninang.</em></h1><p class="subtitle">May maliit akong surprise para sa’yo.</p><button class="primary" data-next="birthday">Open your surprise <span>↗</span></button><div class="tiny">made with a little extra care ♡</div>
-</section>
-<section id="birthday" class="scene" hidden aria-labelledby="birthday-title"><div class="eyebrow">TODAY IS ALL ABOUT YOU</div><div class="birthday-number" aria-hidden="true">20<span>✦</span></div><h2 id="birthday-title">Happy <em>birthday.</em></h2><p class="subtitle">A new chapter. And so much to look forward to.</p><button class="primary" id="wish">Make a wish ✧</button><button class="text-button" data-next="memories">A few favorite moments →</button><p id="wish-note" class="wish-note" aria-live="polite"></p></section>
-<section id="memories" class="scene gallery-scene" hidden aria-labelledby="memories-title"><div class="eyebrow">THE LITTLE MOMENTS</div><h2 id="memories-title">A little collection <em>of you.</em></h2><p class="subtitle">Some moments deserve a spot in the scrapbook.</p><div class="collage" id="collage"></div><p class="tiny">tap a photo to take a closer look</p><button class="primary" data-next="letter">May sasabihin lang ako <span>→</span></button></section>
-<section id="letter" class="scene letter-scene" hidden aria-labelledby="letter-title"><div class="eyebrow">A NOTE FROM NINONG</div><h2 id="letter-title">For your <em>new chapter.</em></h2><article class="letter"><span class="letter-mark" aria-hidden="true">♡</span><h3>Happy birthday ninang ko,</h3><p>super thankful ako nakilala kita. Super thankful ako nakita kita nung binyag ni Zane. Super thankful ako kasi dumaan ka sa FYP ko. Super thankful ako kay god dahil nag eexist ka.</p><p>Congrats Ninang you made it to 20! Diba you're having birthday blues lately? and guess what? ito na 20 kana and naabot mo yung akala mo hindi ka na makakrating dahil sa mga pag subok na binigay sayo.</p><p>Sabi ko naman sayo eh! Basic lang sayo yan! Strong ka eh. Palagi lang pumalag sa laban nang and if nahihirapan? pahinga lang.</p><p>Kapag naman kailangan mo ng mapagsasabihan, nandito ako at nandyan din ang sinigeng. Ayun lang ninang ko super happy ako para sayo kasi naabot mo itong stage. Graduate ka na sa pagiging teenager.</p><p>Happy birthday ulit nang.</p><div class="signature">Love Ninong.</div></article><button class="primary" data-next="finale">One last thing <span>→</span></button></section>
-<section id="finale" class="scene finale-scene" hidden aria-labelledby="finale-title"><div class="eyebrow">SAVED THE LAST PART FOR THIS</div><h2 id="finale-title">This one’s <em>for you.</em></h2><p class="subtitle">Press play, nang.</p><div class="video-wrap"><video id="birthday-video" controls playsinline preload="metadata"><source src="assets/video.mp4" type="video/mp4">Your browser cannot play this video. <a href="assets/video.mp4">Open the birthday video</a>.</video></div><p class="closing">Here’s to you, and everything ahead. ♡</p><button class="text-button" data-next="hello">↺ Start from the beginning</button></section>
-</main>
-<footer><span>HAPPY TWENTIETH, NINANG</span><nav aria-label="Birthday chapters"><button data-next="hello" aria-label="Greeting" aria-current="step"></button><button data-next="birthday" aria-label="Happy birthday"></button><button data-next="memories" aria-label="Photo collage"></button><button data-next="letter" aria-label="Birthday message"></button><button data-next="finale" aria-label="Birthday video"></button></nav><span id="chapter">01 / 05</span></footer>
-<dialog id="photo-dialog"><button class="close" aria-label="Close photo">×</button><button class="photo-prev" aria-label="Previous photo">‹</button><img id="large-photo" alt=""><button class="photo-next" aria-label="Next photo">›</button><p id="photo-count"></p></dialog>
-<audio id="background-music" src="assets/music.mp3" preload="auto"></audio>
-<div id="confetti" aria-hidden="true"></div>
-</body></html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#faeee5" />
+    <title>Hi, Ninang ♡</title>
+    <meta
+      name="description"
+      content="A little birthday surprise for Ninang. Happy 20th!"
+    />
+    <link rel="stylesheet" href="style.css?v=4" />
+    <script src="app.js?v=9" defer></script>
+  </head>
+  <body>
+    <div class="grain" aria-hidden="true"></div>
+    <div class="ambient a" aria-hidden="true">✳</div>
+    <div class="ambient b" aria-hidden="true">✧</div>
+    <header>
+      <a href="#hello" class="wordmark">for you<span> ♡</span></a
+      ><button id="sound" class="sound" aria-pressed="false">
+        ♫ <span>Play music</span>
+      </button>
+    </header>
+    <main>
+      <section
+        id="hello"
+        class="scene intro active"
+        aria-labelledby="hello-title"
+      >
+        <div class="eyebrow">A LITTLE SOMETHING, JUST FOR YOU</div>
+        <div class="intro-art" aria-hidden="true">
+          <span class="orbit o1">✦</span><span class="orbit o2">♡</span
+          ><span class="orbit o3">✧</span
+          ><span class="postmark">a birthday note<br />from ninong</span>
+          <div class="hello-stamp">20<span>looks good on you</span></div>
+        </div>
+        <h1 id="hello-title">Hi, <em>Ninang.</em></h1>
+        <p class="subtitle">May maliit akong surprise para sa’yo.</p>
+        <button class="primary" data-next="birthday">
+          Open your surprise <span>↗</span>
+        </button>
+        <div class="tiny">made with a little extra care ♡</div>
+      </section>
+      <section
+        id="birthday"
+        class="scene"
+        hidden
+        aria-labelledby="birthday-title"
+      >
+        <div class="eyebrow">TODAY IS ALL ABOUT YOU</div>
+        <div class="birthday-number" aria-hidden="true">20<span>✦</span></div>
+        <h2 id="birthday-title">Happy <em>birthday.</em></h2>
+        <p class="subtitle">A new chapter. And so much to look forward to.</p>
+        <button class="primary" id="wish">Make a wish ✧</button
+        ><button class="text-button" data-next="memories">
+          A few favorite moments →
+        </button>
+        <p id="wish-note" class="wish-note" aria-live="polite"></p>
+      </section>
+      <section
+        id="memories"
+        class="scene gallery-scene"
+        hidden
+        aria-labelledby="memories-title"
+      >
+        <div class="eyebrow">THE LITTLE MOMENTS</div>
+        <h2 id="memories-title">A little collection <em>of you.</em></h2>
+        <p class="subtitle">Some moments deserve a spot in the scrapbook.</p>
+        <div class="collage" id="collage"></div>
+        <p class="tiny">tap a photo to take a closer look</p>
+        <button class="primary" data-next="letter">
+          May sasabihin lang ako <span>→</span>
+        </button>
+      </section>
+      <section
+        id="letter"
+        class="scene letter-scene"
+        hidden
+        aria-labelledby="letter-title"
+      >
+        <div class="eyebrow">A NOTE FROM NINONG</div>
+        <h2 id="letter-title">For your <em>new chapter.</em></h2>
+        <article class="letter">
+          <span class="letter-mark" aria-hidden="true">♡</span>
+          <h3>Happy birthday ninang ko,</h3>
+          <p>
+            super thankful ako nakilala kita. Super thankful ako nakita kita
+            nung binyag ni Zane. Super thankful ako kasi dumaan ka sa FYP ko.
+            Super thankful ako kay god dahil nag eexist ka.
+          </p>
+          <p>
+            Congrats Ninang you made it to 20! Diba you're having birthday blues
+            lately? and guess what? ito na 20 kana and naabot mo yung akala mo
+            hindi ka na makakrating dahil sa mga pag subok na binigay sayo.
+          </p>
+          <p>
+            Sabi ko naman sayo eh! Basic lang sayo yan! Strong ka eh. Palagi
+            lang pumalag sa laban nang and if nahihirapan? pahinga lang.
+          </p>
+          <p>
+            Kapag naman kailangan mo ng mapagsasabihan, nandito ako at nandyan
+            din ang sinigeng. Ayun lang ninang ko super happy ako para sayo kasi
+            naabot mo itong stage. Graduate ka na sa pagiging teenager.
+          </p>
+          <p>Happy birthday ulit nang.</p>
+          <div class="signature">Love Ninong.</div>
+        </article>
+        <button class="primary" data-next="finale">
+          One last thing <span>→</span>
+        </button>
+      </section>
+      <section
+        id="finale"
+        class="scene finale-scene"
+        hidden
+        aria-labelledby="finale-title"
+      >
+        <div class="eyebrow">SAVED THE LAST PART FOR THIS</div>
+        <h2 id="finale-title">This one’s <em>for you.</em></h2>
+        <p class="subtitle">Press play, nang.</p>
+        <div class="video-wrap">
+          <video id="birthday-video" controls playsinline preload="metadata">
+            <source src="assets/video.mp4" type="video/mp4" />
+            Your browser cannot play this video.
+            <a href="assets/video.mp4">Open the birthday video</a>.
+          </video>
+        </div>
+        <p class="closing">Here’s to you, and everything ahead. ♡</p>
+        <button class="text-button" data-next="hello">
+          ↺ Start from the beginning
+        </button>
+      </section>
+    </main>
+    <footer>
+      <span>HAPPY TWENTIETH, NINANG</span>
+      <nav aria-label="Birthday chapters">
+        <button
+          data-next="hello"
+          aria-label="Greeting"
+          aria-current="step"
+        ></button
+        ><button data-next="birthday" aria-label="Happy birthday"></button
+        ><button data-next="memories" aria-label="Photo collage"></button
+        ><button data-next="letter" aria-label="Birthday message"></button
+        ><button data-next="finale" aria-label="Birthday video"></button>
+      </nav>
+      <span id="chapter">01 / 05</span>
+    </footer>
+    <dialog id="photo-dialog">
+      <button class="close" aria-label="Close photo">×</button
+      ><button class="photo-prev" aria-label="Previous photo">‹</button
+      ><img id="large-photo" alt="" /><button
+        class="photo-next"
+        aria-label="Next photo"
+      >
+        ›
+      </button>
+      <p id="photo-count"></p>
+    </dialog>
+    <audio id="background-music" src="assets/music.mp3" preload="auto"></audio>
+    <div id="confetti" aria-hidden="true"></div>
+  </body>
+</html>
